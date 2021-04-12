@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../views/partials/head',{title:title}); -%>
+  </head>
+
+  <body>
+    <header><%-include ('../views/partials/header'); -%></header>
+    <div class="page-content-wrapper">
+      <div class="greeting text-center">
+        <h1 class="">
+          Welcome to
+          <span style="text-decoration: underline">Encrypto-Decrypto</span>
+        </h1>
+        <p class="">Select one of the algorithms</p>
+      </div>
+      <div class="buttons text-center">
+        <button type="button" class="btn btn-light">
+          <a href="/vigenere">Vigenere Algorithm</a>
+        </button>
+        <button type="button" class="btn btn-light">
+          <a href="/playfair"> Playfair Algorithm</a>
+        </button>
+      </div>
+    </div>
+
+    <%- include('../views/partials/footer'); -%>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../views/partials/head',{title:title}); -%>
+  </head>
+  <body>
+    <header><%-include ('../views/partials/header'); -%></header>
+    <div class="page-content-wrapper container-fluid">
+      <div class="row">
+        <div class="title col-lg-5 col-md-12">
+          <h1><%=title %></h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="encrypt col-lg-6 col-md-12">
+          <%-include("../views/partials/forms/encrypt",{algorithm : "vigenere"})
+          -%>
+        </div>
+        <div class="decrypt col-lg-6 col-md-12">
+          <%-include("../views/partials/forms/decrypt",{algorithm : "vigenere"})
+          -%>
+        </div>
+      </div>
+      <div class="row results">
+        <div class="col">
+          <% if(encryptedCipherText) { %>
+          <h4>Your last encryption result:</h4>
+          <p>Plain text: <%=cipherPlainText %></p>
+          <p>Key: <%=cipherKey %></p>
+          <p>Encrypted text: <%=encryptedCipherText %></p>
+
+          <% } else { %>
+          <h4>You have no last encryption searches</h4>
+          <% }%>
+        </div>
+        <div class="col">
+          <% if(decriptCipherText) { %>
+          <h4>Your last decryption result:</h4>
+          <p>Encrypted text: <%= decriptCipherPlainText %></p>
+          <p>Key: <%=decriptCipherKey %></p>
+          <p>Decrypted text: <%=decriptCipherText %></p>
+
+          <% } else { %>
+          <h4>You have no last decryption searches</h4>
+          <% }%>
+        </div>
+      </div>
+    </div>
+
+    <%- include('../views/partials/footer'); -%>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<form action="/<%=algorithm%>/decrypt" method="POST">
+  <div class="mb-3">
+    <% if(algorithm=='playfair') {%>
+    <label for="decryptTextInput" class="form-label">Key phrase</label>
+    <% } else {%>
+    <label for="decryptTextInput" class="form-label">Text do decrypt</label>
+    <% }; %>
+    <input
+      type="text"
+      class="form-control"
+      id="decryptTextInput"
+      aria-describedby="decryptTextHelp"
+      name="decryptText"
+    />
+    <div id="plainTextHelp" class="form-text">
+      Enter the text that needs to be decrypted
+    </div>
+  </div>
+  <div class="mb-3">
+    <% if(algorithm=='playfair') {%>
+    <label for="keyInput" class="form-label">Cipher text</label>
+    <% } else {%>
+    <label for="keyInput" class="form-label">Key</label>
+    <% }; %>
+
+    <input type="text" class="form-control" id="keyInput" name="keyText" />
+  </div>
+  <div class="text-center">
+    <button type="submit" class="btn btn-light">Decrypt</button>
+  </div>
+</form>

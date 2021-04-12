@@ -1,0 +1,22 @@
+<form action="/<%=algorithm%>/encrypt" method="POST">
+  <div class="mb-3">
+    <label for="plainTextInput" class="form-label">Plaintext</label>
+    <input
+      type="text"
+      class="form-control"
+      id="plainTextInput"
+      aria-describedby="plainTextHelp"
+      name="plainText"
+    />
+    <div id="plainTextHelp" class="form-text">
+      Enter the text that needs to be encrypted
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="keyInput" class="form-label">Key</label>
+    <input type="text" class="form-control" id="keyInput" name="keyText" />
+  </div>
+  <div class="text-center">
+    <button type="submit" class="btn btn-light">Encrypt</button>
+  </div>
+</form>
